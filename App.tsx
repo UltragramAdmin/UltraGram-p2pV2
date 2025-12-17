@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import { User, Chat, Language } from './types.ts';
-import { authService, networkService, initializeGlobalChat, chatService } from './services/mockService.ts';
-import { translations } from './services/translations.ts';
-import AuthScreen from './components/AuthScreen.tsx';
-import ChatList from './components/ChatList.tsx';
-import ChatWindow from './components/ChatWindow.tsx';
-import Logo from './components/Logo.tsx';
-import ProfileModal from './components/ProfileModal.tsx';
-import BackgroundEffects from './components/BackgroundEffects.tsx';
+import { User, Chat, Language } from './types';
+import { authService, networkService, initializeGlobalChat, chatService } from './services/mockService';
+import { translations } from './services/translations';
+import AuthScreen from './components/AuthScreen';
+import ChatList from './components/ChatList';
+import ChatWindow from './components/ChatWindow';
+import Logo from './components/Logo';
+import ProfileModal from './components/ProfileModal';
+import BackgroundEffects from './components/BackgroundEffects';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -203,6 +203,10 @@ const App: React.FC = () => {
       <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} user={user} currentUser={user} onUpdate={handleUpdateProfile} isEditable={true} lang={lang} />
     </div>
   );
+};
+
+export default App;
+
 };
 
 export default App;
